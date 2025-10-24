@@ -35,29 +35,48 @@
     <div class="nav-toggle" id="navToggle">☰</div>
   </div>
 </nav>
-<section class="hero" id="home">
-    <div class="hero-slider">
-        <div class="slide fade" style="background-image:url('assets/hero1.jpg');"></div>
-        <div class="slide fade" style="background-image:url('assets/hero2.jpg');"></div>
-        <div class="slide fade" style="background-image:url('assets/hero3.jpg');"></div>
+<section class="hero-combo">
+  <div class="hero-left slider">
+    <div class="slide active" style="background-image: url('assets/hero3.jpg');"></div>
+    <div class="slide" style="background-image: url('assets/rice-1.jpg');"></div>
+    <div class="slide" style="background-image: url('assets/rice-2.jpg');"></div>
+
+    <div class="hero-text">
+      <h1>Premium Indian Rice</h1>
+      <p>Finest Kalajeera, Govindabhog & Padmakeshari varieties — exported globally.</p>
+        <a href="#contact" class="btn yellow">Get Quotes</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="offer-card" style="background-image: url('assets/hero2.jpg');">
+      <div class="offer-overlay">
+        <h3>Finger Millet</h3>
+        <p>Pure, nutrient-rich Finger Millets — organically grown and globally exported from India.</p>
+        <a href="#contact" class="btn yellow">Get Quotes</a>
+      </div>
     </div>
 
-    <div class="hero-content">
-        <h2>PURE TASTE. CERTIFIED QUALITY. DELIVERED WORLDWIDE.</h2>
-        <p>Supplying premium Rice, Finger Millet (Ragi), and Turmeric to global importers with trust and traceability.</p>
-        <div class="cta-row">
-            <a href="#contact" class="btn">Request a Quote</a>
-            <a href="#products" class="btn secondary">Our Products</a>
-        </div>
+    <div class="offer-card" style="background-image: url('assets/hero1.jpg');">
+      <div class="offer-overlay">
+        <h3>Turmeric</h3>
+        <p>Golden Lakadong & Erode Turmeric — pure, potent, and globally trusted.</p>
+        <a href="#contact" class="btn yellow">Get Quotes</a>
+      </div>
     </div>
+  </div>
 </section>
 
 <main>
     <!-- About -->
     <section id="about">
         <h2>About Us</h2>
-        <p class="lead"><strong>DEVHARI ENTERPRISE PVT. LTD.</strong> is a leading Indian agro exporter dedicated to bringing the finest agricultural products from Indian farms to global markets.
-            With a deep-rooted commitment to sustainability, quality, and transparency, we serve importers worldwide with certified, traceable, and high-nutrition agro goods.</p>
+        <p class="lead"><strong>DEVHARI ENTERPRISE PVT. LTD.</strong>
+            is a trusted Indian agro exporter committed to delivering the finest, traceable,
+            and high-nutrition agricultural products worldwide. With a focus on sustainability,
+            transparency, and excellence, we connect Indian farms directly to global markets,
+            serving importers with certified, premium-grade produce and a dedication to exceeding
+            customer expectations.</p>
     </section>
 
     <!-- Products -->
@@ -243,6 +262,19 @@
 <footer>
     © 2025 DEVHARI ENTERPRISE PVT. LTD. <br> All Rights Reserved
 </footer>
+<script>
+  // Hero slideshow for Rice section
+  const slides = document.querySelectorAll('.hero-left .slide');
+  let currentSlide = 0;
+
+  function showNextSlide() {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }
+
+  setInterval(showNextSlide, 5000); // Change every 5 seconds
+</script>
 
 <script>
     // mobile nav toggle
